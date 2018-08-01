@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
-import Snackbar from "@material-ui/core/Snackbar";
-import { connect } from "react-redux";
-import propTypes from "prop-types";
-import Progress from "./Progress";
+import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import { connect } from 'react-redux';
+import propTypes from 'prop-types';
+import Progress from './Progress';
 
 class Counter extends Component {
   componentDidMount() {
@@ -46,7 +46,7 @@ class Counter extends Component {
           open={snackbarOpen}
           autoHideDuration={2000}
           onClose={() => this.props.closeSnackbar()}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
           message="I love pastafrolas."
         />
       </React.Fragment>
@@ -61,7 +61,7 @@ Counter.propTypes = {
 
 Counter.defaulProps = {
   cleanState: () => {},
-  a: ""
+  a: ''
 };
 
 const mapStateToProps = state => ({
