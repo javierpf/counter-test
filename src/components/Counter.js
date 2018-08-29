@@ -4,6 +4,13 @@ import Snackbar from '@material-ui/core/Snackbar';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import Progress from './Progress';
+import {
+  increment,
+  decrement,
+  fetchInitial,
+  closeSnackbar,
+  cleanState
+} from '../actions/counter-actions';
 
 class Counter extends Component {
   componentDidMount() {
@@ -19,7 +26,8 @@ class Counter extends Component {
       decrement,
       error,
       loading,
-      snackbarOpen
+      snackbarOpen,
+      fetchInitialCounter
     } = this.props;
     return (
       <React.Fragment>
@@ -27,6 +35,14 @@ class Counter extends Component {
         {!loading &&
           !error && (
             <React.Fragment>
+              <Button
+                onClick={fetchInitialCounter}
+                variant="contained"
+                color="primary"
+                style={{ marginRight: 10 }}
+              >
+                Reset
+              </Button>
               <Button
                 onClick={increment}
                 variant="contained"
