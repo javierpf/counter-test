@@ -1,29 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Provider } from 'react-redux';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import logo from './logo.svg';
 import './App.css';
-import { Provider } from 'react-redux';
 import store from './store';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Counter from './components/Counter';
+import EditDataTable from './components/EditDataTable';
 
-
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <div className="App">
-          <CssBaseline />
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <div style={{ marginTop: 10 }}>
-            <Counter />
-          </div>
-        </div>
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <div className="App">
+      <CssBaseline />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-title">Welcome to React</h1>
+      </header>
+      <div style={{ margin: 10 }}>
+        <EditDataTable />
+      </div>
+    </div>
+  </Provider>
+);
 
 export default App;
